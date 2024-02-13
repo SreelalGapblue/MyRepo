@@ -14,13 +14,13 @@ jobs:
       
       # Add any necessary steps here, such as running tests or building your project
       
-      - name: Create Draft Pull Request
-        uses: peter-evans/create-pull-request@v3
+      - name: Create Pull Request
+        uses: repo-sync/pull-request@v2
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: test
           base: main
-          draft: true
-          title: Automated Pull Request (Draft)
+          title: Automated Pull Request
           body: |
-            This is an automated draft pull request created by a GitHub Action.
+            This is an automated pull request created by a GitHub Action.
+          draft: false
